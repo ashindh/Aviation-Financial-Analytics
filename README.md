@@ -39,15 +39,16 @@ The analysis was structured in three core phases:
 
 ## 📊 Key Business Findings & Insights
 
+## 📊 Key Business Findings & Insights
+
 ### 1. The "Delay vs. Profit" Myth
-A common operational assumption is that flight delays are a primary driver of financial loss. Statistical cohort analysis proved this false within this dataset. The correlation between `Delay (Minutes)` and `Profit (USD)` was calculated at **0.002**. Severe delays (90+ minutes) yielded nearly identical average profit margins to flights with zero delays, indicating that operational inconveniences do not directly scale to ledger losses.
+A common operational assumption is that flight delays are a primary driver of financial loss. Statistical cohort analysis proved this false within this dataset. The correlation between `Delay (Minutes)` and `Profit (USD)` was calculated at **0.002**. Severe delays (90+ minutes) yielded an average profit of $5,223, which is nearly identical to the $5,273 average profit of flights with minimal delays, indicating that operational inconveniences do not directly scale to ledger losses.
 
 ### 2. Unit Economics over Absolute Costs
-An initial attempt to predict absolute `Operating Cost (USD)` yielded an R-squared of near zero. Recognizing that total costs are tied to flight distance and scale rather than pure efficiency, the model was pivoted to predict **Unit Economics (Cost per ASK)**. This adjustment correctly aligned the machine learning logic with financial realities, proving that operational metrics drive approximately 18% of the fluctuation in unit costs.
+An initial attempt to predict absolute `Operating Cost (USD)` yielded an R-squared of near zero (-0.001). Recognizing that total costs are tied to flight scale rather than pure efficiency, the model was pivoted to predict **Unit Economics (Cost per ASK)**. This adjustment correctly aligned the machine learning logic with financial realities, proving that operational metrics drive approximately 17.8% of the fluctuation in unit costs.
 
 ### 3. Fuel Efficiency is the Primary Cost Lever
-The Random Forest feature importance extraction identified **Fuel Efficiency** as the overwhelming driver of unit costs, carrying an **81.8% weight** compared to other metrics. Optimizing turnaround times (3.4% weight) or load factors (5.3% weight) offers minimal financial relief compared to strategic fuel management and route optimization.
-
+The Random Forest feature importance extraction identified **Fuel Efficiency** as the overwhelming driver of unit costs, carrying an **81.8% weight** compared to other metrics. Optimizing load factors (5.4% weight) or turnaround times (3.5% weight) offers minimal financial relief compared to strategic fuel management and route optimization.
 ## 📈 Power BI Executive Dashboard
 The concluding deliverable is a highly interactive Power BI dashboard highlighting the exact break-even thresholds and debt risks to guide cost-saving strategies. 
 * **The CFO's Ledger:** High-level summations of gross revenue, operating expenses, and fleet profitability rates.
