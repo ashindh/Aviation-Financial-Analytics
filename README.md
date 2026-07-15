@@ -17,7 +17,7 @@ The analysis was structured in three core phases:
 3. **Predictive Cost Modeling:** Utilizing Machine Learning to forecast unit costs based on physical operational inputs.
 
 ## 🧰 Tech Stack & Tools
-* **Languages:** Python, SQL, DAX
+* **Languages:** Python, SQL
 * **Data Manipulation:** Pandas, NumPy
 * **Machine Learning:** Scikit-Learn (Random Forest Regressor, Feature Importance Extraction)
 * **Statistical Analysis:** SciPy, Correlation Matrices, Cohort Analysis
