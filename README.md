@@ -132,18 +132,21 @@ An interactive Power BI dashboard was developed to present financial and operati
 ```text
 Aviation-Financial-Analytics/
 │
+├── dashboard/
+│   ├── airlinepbi.pbix
+│   ├── airlinepbi.pdf
+│   ├── dashboard_1.jpg
+│   └── dashboard_2.jpg
+│
 ├── data/
 │   └── aviation dataset
 │
 ├── notebooks/
-│   └── analysis and machine learning notebooks
+│   ├── airlinedata_cleaned.ipynb
+│   ├── airlinedata_stat.ipynb
+│   └── airlinedata_ML.ipynb
 │
-├── powerbi/
-│   └── Power BI dashboard
-│
-├── README.md
-└── requirements.txt
-```
+└── README.md
 
 ## Project Type
 
