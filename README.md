@@ -1,63 +1,154 @@
-# Aviation Fleet Financial Health & Cost Optimization Engine
+# Aviation Financial Analytics
 
-**Author:** Ashindh Anil  
-**Role Target:** Financial Data Analyst  
+## Overview
 
-## 📌 Executive Summary
-This project bridges the gap between computerized financial accounting principles and advanced data analytics. Designed from the perspective of a Financial Data Analyst, this repository analyzes a 200,000-row aviation dataset to identify profit bleeds, assess operational risk, and build predictive machine learning models focusing on unit economics (Cost per ASK). 
+Aviation Financial Analytics is an independent data analytics project focused on analyzing the financial and operational performance of an aviation fleet dataset.
 
-Leveraging a foundational understanding of commerce and business analytics, this project translates raw operational data into actionable, bottom-line financial insights suitable for CFO-level decision-making.
+The project combines data cleaning, feature engineering, exploratory analysis, financial KPI analysis, predictive modeling, and Power BI reporting to examine profitability, operating efficiency, and cost behavior across aviation records.
 
-## 🧠 Business Problem & Strategic Approach
-Aviation is a capital-intensive industry where high gross revenue does not guarantee profitability. The objective of this project was to audit fleet operations, identify the root causes of financial loss, and build a strategic Power BI dashboard to monitor financial leverage and operational efficiency. 
+## Objectives
 
-The analysis was structured in three core phases:
-1. **Financial Auditing & Feature Engineering:** Establishing baseline ledger health and profitability ratios to isolate loss-making flights.
-2. **Statistical Variance Analysis:** Testing the mathematical correlation between operational delays and profit margins to challenge common operational assumptions.
-3. **Predictive Cost Modeling:** Utilizing Machine Learning to forecast unit costs based on physical operational inputs.
+* Analyze financial and operational performance across aviation records
+* Calculate profitability and cost-related KPIs
+* Examine Cost per Available Seat Kilometer (Cost per ASK)
+* Identify patterns in operational and financial metrics
+* Apply machine learning to estimate Cost per ASK
+* Build an interactive Power BI dashboard for financial and operational reporting
 
-## 🧰 Tech Stack & Tools
-* **Languages:** Python, SQL
-* **Data Manipulation:** Pandas, NumPy
-* **Machine Learning:** Scikit-Learn (Random Forest Regressor, Feature Importance Extraction)
-* **Statistical Analysis:** SciPy, Correlation Matrices, Cohort Analysis
-* **Data Visualization & BI:** Power BI (Power Query, Executive Dashboards), Matplotlib, Seaborn
-* **Environment:** Jupyter Notebooks / Google Colab
+## Dataset
 
-## 📂 Repository Structure
-* **`notebooks/`**: Contains the core Python analytical pipeline.
-  * `01_airlinedata_cleaned.ipynb`: Data cleaning and financial feature engineering (`Cost_to_Revenue_Ratio`, `Is_Profitable`).
-  * `02_airlinedata_statipynb.ipynb`: Statistical analysis proving the lack of correlation between flight delays and profit loss.
-  * `03_airlinedata_ML.ipynb`: Random Forest predictive model forecasting Unit Cost (Cost per ASK).
-* **`dashboard/`**: Contains the business deliverables.
-  * `airlinepbi.pbix`: Interactive Power BI Executive Dashboard.
-  * `airlinepbi.pdf`: Static dashboard export for quick viewing.
-  * `dashboard_1.jpg` & `dashboard_2.jpg`: Dashboard visual previews.
-* **`data/`**: 
-  * `data_source_info.txt`: Contains the Kaggle link to the raw Aviation KPIs dataset.
-  * *Reproduction Note: To preserve version control efficiency, the raw 200,000+ row dataset is not hosted in this repository. To reproduce this analysis, download the raw data via the Kaggle link provided in `data_source_info.txt`, then run `01_airlinedata_cleaned.ipynb` to generate the `Aviation_Financial_Cleaned.csv` file locally.*
+The cleaned dataset contains **200,000 records** and includes financial, operational, aircraft, and efficiency-related variables.
 
+Key variables used in the analysis include:
 
+* Revenue
+* Operating Cost
+* Profit
+* Fuel Efficiency
+* Load Factor
+* Aircraft Utilization
+* Maintenance Downtime
+* Turnaround Time
+* Available Seat Kilometers (ASK)
 
-## 📊 Key Business Findings & Insights
+The project also derives additional analytical fields, including:
 
-### 1. The "Delay vs. Profit" Myth
-A common operational assumption is that flight delays are a primary driver of financial loss. Statistical cohort analysis proved this false within this dataset. The correlation between `Delay (Minutes)` and `Profit (USD)` was calculated at **0.002**. Severe delays (90+ minutes) yielded an average profit of $5,223, which is nearly identical to the $5,273 average profit of flights with minimal delays, indicating that operational inconveniences do not directly scale to ledger losses.
+* `Cost_to_Revenue_Ratio`
+* `Is_Profitable`
+* Cost per ASK
 
-### 2. Unit Economics over Absolute Costs
-An initial attempt to predict absolute `Operating Cost (USD)` yielded an R-squared of near zero (-0.001). Recognizing that total costs are tied to flight scale rather than pure efficiency, the model was pivoted to predict **Unit Economics (Cost per ASK)**. This adjustment correctly aligned the machine learning logic with financial realities, proving that operational metrics drive approximately 17.8% of the fluctuation in unit costs.
+## Tools & Technologies
 
-### 3. Fuel Efficiency is the Primary Cost Lever
-The Random Forest feature importance extraction identified **Fuel Efficiency** as the overwhelming driver of unit costs, carrying an **81.8% weight** compared to other metrics. Optimizing load factors (5.4% weight) or turnaround times (3.5% weight) offers minimal financial relief compared to strategic fuel management and route optimization.
-## 📈 Power BI Executive Dashboard
-The concluding deliverable is a highly interactive Power BI dashboard highlighting the exact break-even thresholds and debt risks to guide cost-saving strategies. 
-* **The CFO's Ledger:** High-level summations of gross revenue, operating expenses, and fleet profitability rates.
-* **The Break-Even Matrix:** A scatter plot mapping unit cost vs. unit revenue.
-* **Financial Leverage Risk:** Gauge visuals monitoring the Debt-to-Equity ratio. 
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Scikit-Learn**
+* **Power BI**
+* **Jupyter Notebook**
 
-### Dashboard Previews
-*(Note: Images below reflect the interactive Power BI dashboard located in the `dashboard/` folder)*
+## Data Preparation & Analysis
 
-![CFO Ledger and Break-Even Matrix](dashboard/dashboard_1.jpg)
+The project involved:
 
-![Fuel Inefficiency and Operational Risk](dashboard/dashboard_2.jpg)
+* Cleaning and preparing 200,000 aviation records
+* Handling data types and preparing analytical variables
+* Creating profitability and cost-related indicators
+* Calculating Cost per ASK as an operational unit-economics metric
+* Performing descriptive and statistical analysis
+* Examining relationships between operational and financial variables
+* Preparing data for Power BI reporting
+
+## Predictive Modeling
+
+A **Random Forest Regressor** was developed to estimate Cost per ASK.
+
+### Model Configuration
+
+* Train/test split: **80/20**
+* Number of trees: **50**
+* Maximum tree depth: **10**
+* Predictors: 5 operational and efficiency variables
+
+### Model Results
+
+| Metric |    Result |
+| ------ | --------: |
+| R²     |    0.1778 |
+| MAE    | $2,988.29 |
+
+The model provides limited predictive performance, indicating that the selected variables explain only part of the variation in Cost per ASK.
+
+## Feature Importance
+
+The Random Forest model identified the following feature-importance distribution:
+
+| Feature              | Importance |
+| -------------------- | ---------: |
+| Fuel Efficiency      |      81.8% |
+| Load Factor          |       5.4% |
+| Maintenance Downtime |       4.7% |
+| Aircraft Utilization |       4.7% |
+| Turnaround Time      |       3.5% |
+
+**Fuel Efficiency represented 81.8% of the model's feature importance.**
+
+This is a model-based feature-importance result and should not be interpreted as evidence that fuel efficiency causally explains 81.8% of aviation costs.
+
+## Financial Analysis
+
+The analysis included profitability and cost metrics across the dataset.
+
+The records contain approximately **$1.03 billion in total profit** across the analyzed dataset.
+
+The project also examines:
+
+* Revenue and operating costs
+* Profitability
+* Cost-to-revenue ratio
+* Cost per ASK
+* Operational efficiency indicators
+
+## Power BI Dashboard
+
+An interactive Power BI dashboard was developed to present financial and operational performance through:
+
+* KPI reporting
+* Profitability analysis
+* Cost analysis
+* Operational performance
+* Aircraft and fleet-level comparisons
+* Interactive filtering and visual exploration
+
+## Key Takeaways
+
+* The dataset contains 200,000 aviation records with financial and operational information.
+* Cost per ASK provides a useful unit-economics perspective for analyzing aviation operating costs.
+* Fuel Efficiency had the highest feature importance in the Random Forest model at 81.8%.
+* The predictive model achieved an R² of 0.1778, indicating limited explanatory power from the selected predictors.
+* The Power BI dashboard provides an interactive way to explore financial and operational performance.
+
+## Project Structure
+
+```text
+Aviation-Financial-Analytics/
+│
+├── data/
+│   └── aviation dataset
+│
+├── notebooks/
+│   └── analysis and machine learning notebooks
+│
+├── powerbi/
+│   └── Power BI dashboard
+│
+├── README.md
+└── requirements.txt
+```
+
+## Project Type
+
+**Independent Data Analytics Project**
+
+## Skills Demonstrated
+
+Python · Pandas · NumPy · Scikit-Learn · Power BI · Data Cleaning · Feature Engineering · Exploratory Data Analysis · Financial Analysis · KPI Analysis · Unit Economics · Predictive Modeling · Data Visualization
