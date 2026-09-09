@@ -207,8 +207,8 @@ Aviation-Financial-Analytics/
 ├── dashboard/
 │   ├── airlinepbi.pbix
 │   ├── airlinepdf.pdf
-│   ├── dashboard1.jpg
-│   └── dashboard2.jpg
+│   ├── dashboard1.png
+│   └── dashboard2.png
 │
 ├── data/
 │   ├── Aviation_Financial_Cleaned.csv
