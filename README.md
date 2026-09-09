@@ -191,11 +191,11 @@ The second page presents:
 
 ### Dashboard View 1
 
-![Aviation Financial Performance Dashboard](dashboard/dashboard_1.jpg)
+![Aviation Financial Performance Dashboard](dashboard/dashboard1.png)
 
 ### Dashboard View 2
 
-![Aviation Unit Economics Dashboard](dashboard/dashboard_2.jpg)
+![Aviation Unit Economics Dashboard](dashboard/dashboard2.png)
 
 The original Power BI report and exported PDF are available in the `dashboard` folder.
 
@@ -206,9 +206,9 @@ Aviation-Financial-Analytics/
 │
 ├── dashboard/
 │   ├── airlinepbi.pbix
-│   ├── airlinepbi.pdf
-│   ├── dashboard_1.jpg
-│   └── dashboard_2.jpg
+│   ├── airlinepdf.pdf
+│   ├── dashboard1.jpg
+│   └── dashboard2.jpg
 │
 ├── data/
 │   ├── Aviation_Financial_Cleaned.csv
