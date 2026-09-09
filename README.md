@@ -197,7 +197,7 @@ The second page presents:
 
 ![Aviation Unit Economics Dashboard](dashboard/dashboard2.png)
 
-The original Power BI report and exported PDF are available in the `dashboard` folder.
+The original Power BI report and exported PDF are also available in the `dashboard` folder.
 
 ## Repository Structure
 
@@ -223,3 +223,44 @@ Aviation-Financial-Analytics/
 │   └── aviation_financial_analysis.sql
 │
 └── README.md
+```
+
+## Key Takeaways
+
+- The final dataset contains **200,000 aviation records** with financial and operational information.
+- The analyzed records contain approximately **$1.03B in total profit**.
+- **60.59%** of records are classified as profitable.
+- **39.41%** of records have Cost per ASK greater than Revenue per ASK.
+- Cost per ASK provides a useful unit-economics perspective for analyzing aviation operating costs.
+- Fuel Efficiency had the highest feature importance in the Random Forest model at **81.8%**.
+- The predictive model achieved an **R² of 0.1778**, indicating limited predictive performance from the selected predictors.
+- SQL provides structured financial analysis, while Power BI communicates the results through interactive financial and operational visualizations.
+
+## Key Skills Demonstrated
+
+- Data Cleaning
+- Feature Engineering
+- Exploratory Data Analysis
+- Financial Analysis
+- KPI Analysis
+- Cost Analysis
+- Unit Economics
+- SQL
+- MySQL
+- Power BI
+- Data Visualization
+- Python
+- Pandas
+- NumPy
+- Scikit-Learn
+- Predictive Modeling
+- Random Forest Regression
+- Statistical Analysis
+
+## Project Type
+
+**Independent Data Analytics Project**
+
+## Author
+
+**Ashindh Anil**
